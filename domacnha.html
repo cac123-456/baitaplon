@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đồ Mặc Nhà Nam - H-ATTIRE</title>
+  <link rel="icon" type="image/jpeg" href="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-top">
+    <div class="container">
+      <p>🚀 Freeship đơn từ 299K &nbsp;|&nbsp; Đổi trả miễn phí 60 ngày &nbsp;|&nbsp; Hotline: <strong>1800 2088</strong></p>
+    </div>
+  </div>
+  <div class="header-main">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg" alt="H-ATTIRE Logo" class="logo-img"/>
+        <span class="logo-text">H-ATTIRE</span>
+      </a>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li class="has-dropdown">
+            <a href="sanpham.html" class="active">Đồ Mặc Nhà ▾</a>
+            <ul class="dropdown">
+              <li><a href="aothun.html">Áo Thun</a></li>
+              <li><a href="aopolo.html">Áo Polo</a></li>
+              <li><a href="quanshorts.html">Quần Shorts</a></li>
+              <li><a href="domacnha.html" class="active">Đồ Mặc Nhà</a></li>
+            </ul>
+          </li>
+          <li><a href="tintuc.html">Tin Tức</a></li>
+          <li><a href="dangky.html">Đăng Ký</a></li>
+          <li><a href="hoatdong.html">Hoạt Động</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="header-search">
+          <input id="header-search-input" type="text" class="header-search-input"
+            placeholder="Tìm kiếm..." autocomplete="off"/>
+          <button class="header-search-icon" title="Tìm kiếm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </div>
+        <a href="dangky.html" class="icon-btn" title="Tài khoản">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <a href="giohang.html" class="icon-btn cart-btn" title="Giỏ hàng">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero hero-domacnha">
+  <h1>🏠 Đồ Mặc Nhà Nam</h1>
+  <p>Thoải mái tuyệt đối – thư giãn đúng nghĩa tại nhà</p>
+  <div class="breadcrumb">
+    <a href="index.html">Trang Chủ</a><span>›</span>
+    <a href="sanpham.html">Sản Phẩm</a><span>›</span>
+    <span>Đồ Mặc Nhà</span>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <div class="container filter-inner">
+    <span class="filter-label">Lọc:</span>
+    <div class="filter-tags">
+      <a href="sanpham.html" class="filter-tag">Ưu Điểm</a>
+      <a href="aothun.html" class="filter-tag">Áo Thun</a>
+      <a href="aopolo.html" class="filter-tag">Áo Polo</a>
+      <a href="quanshorts.html" class="filter-tag">Quần Shorts</a>
+      <a href="domacnha.html" class="filter-tag active">Đồ Mặc Nhà</a>
+    </div>
+    <select class="sort-select" title="Sắp xếp sản phẩm" aria-label="Sắp xếp sản phẩm">
+      <option>Mới nhất</option>
+      <option>Giá tăng dần</option>
+      <option>Giá giảm dần</option>
+    </select>
+  </div>
+</div>
+
+<main class="container">
+  <div class="products-layout">
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <h3>Danh Mục</h3>
+        <ul class="sidebar-list">
+          <li><a href="aothun.html">Áo Thun Nam</a></li>
+          <li><a href="aopolo.html">Áo Polo Nam</a></li>
+          <li><a href="quanshorts.html">Quần Shorts</a></li>
+          <li><a href="domacnha.html" class="sidebar-link-active">Đồ Mặc Nhà</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-box">
+        <h3>Loại Sản Phẩm</h3>
+        <ul class="sidebar-list">
+          <li><a href="#">Bộ Mặc Nhà Ngắn</a></li>
+          <li><a href="#">Bộ Mặc Nhà Dài</a></li>
+          <li><a href="#">Áo Ngủ / Áo Ba Lỗ</a></li>
+          <li><a href="#">Quần Mặc Nhà</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-box">
+        <h3>Lọc Giá</h3>
+        <ul class="sidebar-list">
+          <li><a href="#">Dưới 250.000đ</a></li>
+          <li><a href="#">250.000 – 400.000đ</a></li>
+          <li><a href="#">Trên 400.000đ</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-box">
+        <h3>Kích Cỡ</h3>
+        <div class="tags-grid">
+          <span class="filter-tag filter-tag-sm">S</span>
+          <span class="filter-tag filter-tag-sm active">M</span>
+          <span class="filter-tag filter-tag-sm">L</span>
+          <span class="filter-tag filter-tag-sm">XL</span>
+          <span class="filter-tag filter-tag-sm">XXL</span>
+        </div>
+      </div>
+    </aside>
+    <div>
+      <div class="section-header">
+        <h2>Đồ Mặc Nhà Nam (7 sản phẩm)</h2>
+        <span class="results-count">Hiển thị 1-7</span>
+      </div>
+      <div class="products-grid-3">
+
+        <!-- Sản phẩm 1 -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="anh/9e86e8bcdc7a0db1175fdc00963469cd.jpg" alt="Bộ Mặc Nhà Premium" class="product-img"/>
+            <span class="badge">Bán Chạy</span>
+            <div class="product-actions">
+              <a href="#" class="act-btn">🤍</a>
+              <a href="giohang.html" class="act-btn">🛒</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-brand">H-ATTIRE Home</p>
+            <h4 class="product-name">Bộ Đồ Mặc Nhà Premium</h4>
+            <div class="product-price">
+              <span class="price-new">319.000đ</span>
+              <span class="price-old">399.000đ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 2 -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="anh/a08467e8e1c6a3f720dc711921149531.jpg" alt="Bộ Ngắn Thoáng Mát" class="product-img"/>
+            <span class="badge">Mới</span>
+            <div class="product-actions">
+              <a href="#" class="act-btn">🤍</a>
+              <a href="giohang.html" class="act-btn">🛒</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-brand">H-ATTIRE Home</p>
+            <h4 class="product-name">Bộ Ngắn Thoáng Mát Hè 2024</h4>
+            <div class="product-price">
+              <span class="price-new">259.000đ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 3 -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="anh/00b1ced62f42e749bdf8fcb05696987b.jpg" alt="Bộ Dài Cotton" class="product-img"/>
+            <span class="badge badge-sale">-20%</span>
+            <div class="product-actions">
+              <a href="#" class="act-btn">🤍</a>
+              <a href="giohang.html" class="act-btn">🛒</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-brand">H-ATTIRE Home</p>
+            <h4 class="product-name">Bộ Dài Cotton Mềm Mại</h4>
+            <div class="product-price">
+              <span class="price-new">349.000đ</span>
+              <span class="price-old">439.000đ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 4 -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="anh/1ffce5edbce8b031192077541383f5fa.jpg" alt="Quần Mặc Nhà" class="product-img"/>
+            <div class="product-actions">
+              <a href="#" class="act-btn">🤍</a>
+              <a href="giohang.html" class="act-btn">🛒</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-brand">H-ATTIRE Home</p>
+            <h4 class="product-name">Quần Mặc Nhà Thoải Mái</h4>
+            <div class="product-price">
+              <span class="price-new">149.000đ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 5 -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="anh/3885048773ad02d9426f45ba56f824c1.jpg" alt="Áo Ngủ Cotton" class="product-img"/>
+            <div class="product-actions">
+              <a href="#" class="act-btn">🤍</a>
+              <a href="giohang.html" class="act-btn">🛒</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-brand">H-ATTIRE Home</p>
+            <h4 class="product-name">Áo Ngủ Ba Lỗ Cotton</h4>
+            <div class="product-price">
+              <span class="price-new">129.000đ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 6 -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="anh/9a85ab0def814385587ece71da0f6afd.jpg" alt="Combo Mặc Nhà" class="product-img"/>
+            <span class="badge badge-accent">Combo</span>
+            <div class="product-actions">
+              <a href="#" class="act-btn">🤍</a>
+              <a href="giohang.html" class="act-btn">🛒</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-brand">H-ATTIRE Combo</p>
+            <h4 class="product-name">Combo Bộ Mặc Nhà + Tất</h4>
+            <div class="product-price">
+              <span class="price-new">399.000đ</span>
+              <span class="price-old">499.000đ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 7 -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="anh/do mac nha.jpg" alt="Đồ Mặc Nhà Kẻ Sọc" class="product-img"/>
+            <span class="badge">Phổ Biến</span>
+            <div class="product-actions">
+              <a href="#" class="act-btn">🤍</a>
+              <a href="giohang.html" class="act-btn">🛒</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-brand">H-ATTIRE Home</p>
+            <h4 class="product-name">Bộ Mặc Nhà Kẻ Sọc Vintage</h4>
+            <div class="product-price">
+              <span class="price-new">289.000đ</span>
+              <span class="price-old">359.000đ</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="pagination">
+        <a href="#" class="page-link page-link-active">1</a>
+        <a href="#" class="page-link">2</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <img src="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg" alt="H-ATTIRE" class="footer-logo"/>
+      <span class="footer-logo-text">H-ATTIRE</span>
+      <p>Thương hiệu thời trang nam Việt Nam.</p>
+      <div class="footer-social">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="bi bi-facebook"></i> Facebook
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="bi bi-instagram"></i> Instagram
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="bi bi-youtube"></i> YouTube
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Sản Phẩm</h4>
+      <ul>
+        <li><a href="aothun.html">Áo Thun Nam</a></li>
+        <li><a href="aopolo.html">Áo Polo Nam</a></li>
+        <li><a href="quanshorts.html">Quần Shorts</a></li>
+        <li><a href="domacnha.html">Đồ Mặc Nhà</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hỗ Trợ</h4>
+      <ul>
+        <li><a href="dangky.html">Đăng Ký Thành Viên</a></li>
+        <li><a href="#">Chính Sách Đổi Trả</a></li>
+        <li><a href="hoatdong.html">Tin Hoạt Động</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <p class="contact-line">
+        <i class="bi bi-telephone-fill contact-icon contact-phone"></i>
+        <span>Hotline: <strong>1800 2088</strong></span>
+      </p>
+      <p class="contact-line">
+        <i class="bi bi-envelope-fill contact-icon contact-email"></i>
+        <span>Email: hello@H-ATTIRE.me</span>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container"><p>© 2024 H-ATTIRE. Bản quyền thuộc về H-ATTIRE Vietnam.</p></div>
+  </div>
+</footer>
+
+</body>
+</html>

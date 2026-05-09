@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>H-ATTIRE - Áo Nam Đẹp, Cao Cấp, Thoáng Mát</title>
+  <!-- Favicon (icon trên thanh tiêu đề) -->
+  <link rel="icon" type="image/jpeg" href="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-top">
+    <div class="container">
+      <p>🚀 Freeship đơn từ 299K &nbsp;|&nbsp; Đổi trả miễn phí 60 ngày &nbsp;|&nbsp; Hotline: <strong>1800 2088</strong></p>
+    </div>
+  </div>
+  <div class="header-main">
+    <div class="container header-inner">
+      <!-- LOGO -->
+      <a href="index.html" class="logo">
+        <img src="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg" alt="H-ATTIRE Logo" class="logo-img"/>
+        <span class="logo-text">H-ATTIRE</span>
+      </a>
+
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Trang Chủ</a></li>
+          <li class="has-dropdown">
+            <a href="sanpham.html">Sản Phẩm ▾</a>
+            <ul class="dropdown">
+              <li><a href="aothun.html">Áo Thun</a></li>
+              <li><a href="aopolo.html">Áo Polo</a></li>
+              <li><a href="quanshorts.html">Quần Shorts</a></li>
+              <li><a href="domacnha.html">Đồ Mặc Nhà</a></li>
+            </ul>
+          </li>
+          <li><a href="tintuc.html">Tin Tức</a></li>
+          <li><a href="dangky.html">Đăng Ký</a></li>
+          <li><a href="hoatdong.html">Hoạt Động</a></li>
+        </ul>
+      </nav>
+
+      <!-- HEADER ACTIONS -->
+      <div class="header-actions">
+        <!-- INLINE SEARCH BAR -->
+        <div class="header-search">
+          <input id="header-search-input" type="text" class="header-search-input"
+            placeholder="Tìm kiếm..." autocomplete="off"/>
+          <button class="header-search-icon" title="Tìm kiếm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </div>
+        <a href="dangky.html" class="icon-btn" title="Tài khoản">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <a href="giohang.html" class="icon-btn cart-btn" title="Giỏ hàng">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO BANNER ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">TUYỂN CHỌN HÈ 2024</span>
+    <h1>Phong Cách Nam<br/><span class="highlight">Mỗi Ngày</span></h1>
+    <p>Định hình phong cách riêng với các thiết kế đón<br/>đầu xu hướng. Tự tin và thoải mái tuyệt đối cho<br>mọi hoạt động hàng ngày</p>
+    <div class="hero-btns">
+      <a href="sanpham.html" class="btn btn-primary">Mua Ngay</a>
+      <a href="tintuc.html" class="btn btn-outline">Khám Phá</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <!-- Chèn ảnh hero banner -->
+    <img src="anh/fc00364d79d124f34f8edb372b5a9fb6.jpg" alt="Hero Banner H-ATTIRE" class="hero-img"/>
+  </div>
+</section>
+
+<!-- ===== CATEGORY BAR ===== -->
+<section class="category-bar">
+  <div class="container">
+    <div class="cat-grid">
+      <a href="aothun.html" class="cat-item">
+        <!-- Chèn ảnh danh mục -->
+        <img src="anh/42ddd8c525b1f8e607ffd2bf132da2f9.jpg" alt="Áo Thun"/>
+        <span>Áo Thun</span>
+      </a>
+      <a href="aopolo.html" class="cat-item">
+        <img src="anh/d2df78f34974b9e680cb80855000a3a6.jpg" alt="Áo Polo"/>
+        <span>Áo Polo</span>
+      </a>
+      <a href="quanshorts.html" class="cat-item">
+        <img src="anh/5a3ced54ea0b2fb7217bab3476b7782e.jpg" alt="Quần Shorts"/>
+        <span>Quần Shorts</span>
+      </a>
+      <a href="domacnha.html" class="cat-item">
+        <img src="anh/e86751de646ad044b7e12a32fa54a323.jpg" alt="Đồ Mặc Nhà"/>
+        <span>Đồ Mặc Nhà</span>
+      </a>
+      <a href="sanpham.html" class="cat-item">
+        <img src="anh/2291a9ec2ffcb6f6058f67bdd2c9b167.jpg" alt="Sale"/>
+        <span>🔥 Đang Sale</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT + SIDEBAR ===== -->
+<main class="main-layout container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-box">
+      <h3>Danh Mục</h3>
+      <ul class="sidebar-list">
+        <li><a href="aothun.html">Áo Thun Nam</a></li>
+        <li><a href="aopolo.html">Áo Polo Nam</a></li>
+        <li><a href="quanshorts.html">Quần Shorts</a></li>
+        <li><a href="domacnha.html">Đồ Mặc Nhà</a></li>
+        <li><a href="sanpham.html">Toàn Bộ Sản Phẩm</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-box">
+      <h3>Lọc Theo Giá</h3>
+      <ul class="sidebar-list">
+        <li><a href="#">Dưới 200.000đ</a></li>
+        <li><a href="#">200.000 – 350.000đ</a></li>
+        <li><a href="#">350.000 – 500.000đ</a></li>
+        <li><a href="#">Trên 500.000đ</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-box sidebar-banner">
+      <!-- Chèn ảnh banner sidebar -->
+      <img src="anh/21418f08391d3592b8f5864e6388f234.jpg" alt="Khuyến mãi" class="sidebar-img"/>
+      <p>Freeship đơn từ 299K</p>
+    </div>
+    <div class="sidebar-box">
+      <h3>Bài Viết Nổi Bật</h3>
+      <ul class="sidebar-list">
+        <li><a href="tintuc.html">Cách chọn áo phù hợp dáng người</a></li>
+        <li><a href="tintuc.html">Xu hướng thời trang hè 2024</a></li>
+        <li><a href="tintuc.html">Mẹo phối đồ nam đơn giản</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <section class="content-area">
+    <!-- SẢN PHẨM NỔI BẬT -->
+    <div class="section-header">
+      <h2>Sản Phẩm Nổi Bật</h2>
+      <a href="sanpham.html" class="see-all">Xem tất cả →</a>
+    </div>
+    <div class="product-grid">
+
+      <!-- SẢN PHẨM 1 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="anh/78fea3821d15bfe36f78344c6ec11c26.jpg" alt="Áo Thun Basic" class="product-img"/>
+          <span class="badge">Mới</span>
+          <div class="product-actions">
+            <a href="#" class="act-btn">🤍</a>
+            <a href="giohang.html" class="act-btn">🛒</a>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-brand">H-ATTIRE</p>
+          <h4 class="product-name"><a href="aothun.html">Áo Thun Cotton Mềm</a></h4>
+          <div class="product-price">
+            <span class="price-new">189.000đ</span>
+            <span class="price-old">250.000đ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SẢN PHẨM 2 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="anh/8db556cf3ebbf7a6ad075f3555889d23.jpg" alt="Áo Polo" class="product-img"/>
+          <span class="badge badge-sale">-20%</span>
+          <div class="product-actions">
+            <a href="#" class="act-btn">🤍</a>
+            <a href="giohang.html" class="act-btn">🛒</a>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-brand">H-ATTIRE</p>
+          <h4 class="product-name"><a href="aopolo.html">Áo Polo Pique Cao Cấp</a></h4>
+          <div class="product-price">
+            <span class="price-new">279.000đ</span>
+            <span class="price-old">349.000đ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SẢN PHẨM 3 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="anh/2882fa34b88c84db350af6dcceecca34.jpg" alt="Quần Shorts" class="product-img"/>
+          <div class="product-actions">
+            <a href="#" class="act-btn">🤍</a>
+            <a href="giohang.html" class="act-btn">🛒</a>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-brand">H-ATTIRE</p>
+          <h4 class="product-name"><a href="quanshorts.html">Quần Shorts Thể Thao</a></h4>
+          <div class="product-price">
+            <span class="price-new">229.000đ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SẢN PHẨM 4 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="anh/340041667e45aafacdf31f0623a6ea46.jpg" alt="Đồ Mặc Nhà" class="product-img"/>
+          <span class="badge">Bán Chạy</span>
+          <div class="product-actions">
+            <a href="#" class="act-btn">🤍</a>
+            <a href="giohang.html" class="act-btn">🛒</a>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-brand">H-ATTIRE</p>
+          <h4 class="product-name"><a href="domacnha.html">Bộ Đồ Mặc Nhà Thoáng Mát</a></h4>
+          <div class="product-price">
+            <span class="price-new">319.000đ</span>
+            <span class="price-old">399.000đ</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /product-grid -->
+
+    <!-- BANNER GIỮA TRANG -->
+    <div class="mid-banner">
+      <!-- Chèn ảnh banner giữa trang -->
+      <img src="anh/b1883465300e53be112300148d54d8c9.jpg" alt="Ưu đãi mùa hè" class="mid-banner-img"/>
+      <div class="mid-banner-text">
+        <h3>Ưu Đãi Hè 2024</h3>
+        <p>Giảm đến 40% toàn bộ sản phẩm mùa hè</p>
+        <a href="sanpham.html" class="btn btn-primary">Mua Ngay</a>
+      </div>
+    </div>
+
+    <!-- TIN TỨC MỚI NHẤT -->
+    <div class="section-header">
+      <h2>Tin Tức Mới Nhất</h2>
+      <a href="tintuc.html" class="see-all">Xem tất cả →</a>
+    </div>
+    <div class="news-grid">
+      <article class="news-card">
+        <!-- Chèn ảnh tin tức 1 -->
+        <img src="anh/e90d78373b6320cb8c5511008e55741c.jpg" alt="Tin tức 1" class="news-img"/>
+        <div class="news-body">
+          <span class="news-tag">Phong Cách</span>
+          <h4><a href="tintuc.html">5 Cách Phối Áo Thun Cực Chất Cho Nam 2024</a></h4>
+          <p>Áo thun là item cơ bản không thể thiếu trong tủ đồ nam. Hãy cùng khám phá những cách phối đồ...</p>
+          <span class="news-date">15/06/2024</span>
+        </div>
+      </article>
+      <article class="news-card">
+        <!-- Chèn ảnh tin tức 2 -->
+        <img src="anh/f8bac8c0c294feb3a717e54faf9557fc.jpg" alt="Tin tức 2" class="news-img"/>
+        <div class="news-body">
+          <span class="news-tag">Chất Liệu</span>
+          <h4><a href="tintuc.html">Vải Cotton H-ATTIRE – Vì Sao Thoáng Mát Hơn?</a></h4>
+          <p>Công nghệ dệt vải độc quyền giúp áo H-ATTIRE thoáng mát hơn 30% so với áo thông thường...</p>
+          <span class="news-date">10/06/2024</span>
+        </div>
+      </article>
+      <article class="news-card">
+        <!-- Chèn ảnh tin tức 3 -->
+        <img src="anh/a81c29091eccb0dc3f7940ab20889680.jpg" alt="Tin tức 3" class="news-img"/>
+        <div class="news-body">
+          <span class="news-tag">Xu Hướng</span>
+          <h4><a href="tintuc.html">Xu Hướng Màu Sắc Thời Trang Nam Hè 2024</a></h4>
+          <p>Mùa hè 2024 chứng kiến sự trở lại của các gam màu earth tone kết hợp với tone trắng tinh khôi...</p>
+          <span class="news-date">05/06/2024</span>
+        </div>
+      </article>
+    </div>
+
+  </section><!-- /content-area -->
+</main>
+
+<!-- ===== WHY H-ATTIRE ===== -->
+<section class="why-section">
+  <div class="container">
+    <h2 class="section-title-center">Tại Sao Chọn H-ATTIRE?</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">🌿</div>
+        <h4>Chất Liệu Cao Cấp</h4>
+        <p>100% cotton organic, thoáng mát, thấm hút mồ hôi cực tốt</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">✏️</div>
+        <h4>Thiết Kế Tinh Tế</h4>
+        <p>Đội ngũ designer chuyên nghiệp, cập nhật xu hướng liên tục</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🔁</div>
+        <h4>Đổi Trả 60 Ngày</h4>
+        <p>Miễn phí đổi trả trong 60 ngày nếu không vừa ý</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🚀</div>
+        <h4>Freeship Toàn Quốc</h4>
+        <p>Giao hàng miễn phí cho đơn từ 299K trên toàn quốc</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <!-- Chèn logo footer -->
+      <img src="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg" alt="H-ATTIRE" class="footer-logo"/>
+      <span class="footer-logo-text">H-ATTIRE</span>
+      <p>Thương hiệu thời trang nam Việt Nam với sứ mệnh mang lại phong cách sống tích cực cho mọi chàng trai.</p>
+      <div class="footer-social">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="bi bi-facebook"></i> Facebook
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="bi bi-instagram"></i> Instagram
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="bi bi-youtube"></i> YouTube
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Sản Phẩm</h4>
+      <ul>
+        <li><a href="sanpham.html">Áo Thun Nam</a></li>
+        <li><a href="sanpham.html">Áo Polo Nam</a></li>
+        <li><a href="quanshorts.html">Quần Shorts</a></li>
+        <li><a href="domacnha.html">Đồ Mặc Nhà</a></li>
+        <li><a href="sanpham.html">Combo Tiết Kiệm</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hỗ Trợ</h4>
+      <ul>
+        <li><a href="dangky.html">Đăng Ký Thành Viên</a></li>
+        <li><a href="#">Chính Sách Đổi Trả</a></li>
+        <li><a href="#">Hướng Dẫn Chọn Size</a></li>
+        <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+        <li><a href="hoatdong.html">Tin Hoạt Động</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <p class="contact-line">
+        <i class="bi bi-telephone-fill contact-icon contact-phone"></i>
+        <span>Hotline: <strong>1800 2088</strong></span>
+      </p>
+      <p class="contact-line">
+        <i class="bi bi-envelope-fill contact-icon contact-email"></i>
+        <span>Email: hello@H-ATTIRE.me</span>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2024 H-ATTIRE. Bản quyền thuộc về H-ATTIRE Vietnam. | <a href="#">Chính Sách Bảo Mật</a> | <a href="#">Điều Khoản Dịch Vụ</a></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+/* ===== HEADER INLINE SEARCH ===== */
+.header-search {
+  display: flex; align-items: center; background: #f5f5f5;
+  border: 1.5px solid #e8e8e8; border-radius: 999px;
+  padding: 0 14px 0 18px; height: 40px; width: 220px;
+  transition: border-color 0.25s, box-shadow 0.25s, width 0.3s; gap: 6px;
+}
+.header-search:focus-within {
+  border-color: #3d6bce; box-shadow: 0 0 0 3px rgba(61,107,206,0.12);
+  width: 270px; background: #fff;
+}
+.header-search-input {
+  flex: 1; background: transparent; border: none; outline: none;
+  font-size: 0.9rem; color: #222; font-family: inherit; min-width: 0;
+}
+.header-search-input::placeholder { color: #aaa; font-size: 0.88rem; }
+.header-search-icon {
+  background: none; border: none; padding: 0; cursor: pointer;
+  color: #999; display: flex; align-items: center; transition: color 0.2s; flex-shrink: 0;
+}
+.header-search:focus-within .header-search-icon,
+.header-search-icon:hover { color: #3d6bce; }
+.icon-btn svg { display: block; }
+
+</style>
+
+</body>
+</html>

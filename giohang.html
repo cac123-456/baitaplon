@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Giỏ Hàng - H-ATTIRE</title>
+  <link rel="icon" type="image/jpeg" href="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    .cart-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:2000; opacity:0; visibility:hidden; transition:opacity 0.38s cubic-bezier(0.22,1,0.36,1), visibility 0.38s; }
+    .cart-overlay.open { opacity:1; visibility:visible; }
+    .cart-drawer { position:fixed; top:0; right:0; bottom:0; width:440px; max-width:100vw; background:#fff; z-index:2001; display:flex; flex-direction:column; transform:translateX(100%); transition:transform 0.42s cubic-bezier(0.22,1,0.36,1); box-shadow:-8px 0 40px rgba(0,0,0,0.18); }
+    .cart-drawer.open { transform:translateX(0); }
+    .cd-head { display:flex; align-items:center; gap:12px; padding:20px 24px; border-bottom:1px solid #eee; flex-shrink:0; }
+    .cd-head-icon { font-size:22px; color:#1a1a1a; }
+    .cd-head h2 { flex:1; font-family:'Barlow',sans-serif; font-size:16px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#1a1a1a; margin:0; }
+    .cd-close { background:none; border:none; cursor:pointer; font-size:22px; color:#888; line-height:1; padding:4px; transition:color 0.2s,transform 0.2s; }
+    .cd-close:hover { color:#1a1a1a; transform:rotate(90deg); }
+    .cd-empty { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px 24px; text-align:center; }
+    .cd-empty-notice { width:100%; padding:16px 20px; background:#fdf8e7; border:1px solid #f0e5a0; color:#7a6300; font-size:13.5px; text-align:center; margin:20px 0 0; }
+    .cd-items { flex:1; overflow-y:auto; padding:16px 24px; }
+    .cd-items::-webkit-scrollbar { width:4px; }
+    .cd-items::-webkit-scrollbar-thumb { background:#ddd; border-radius:4px; }
+    .cd-item { display:flex; gap:14px; padding:16px 0; border-bottom:1px solid #f0f0f0; animation:itemSlideIn 0.3s cubic-bezier(0.22,1,0.36,1) both; }
+    @keyframes itemSlideIn { from { opacity:0; transform:translateX(20px); } to { opacity:1; transform:translateX(0); } }
+    .cd-item-img { width:80px; height:80px; flex-shrink:0; object-fit:cover; background:#f5f5f5; border-radius:4px; }
+    .cd-item-img-ph { width:80px; height:80px; flex-shrink:0; background:linear-gradient(135deg,#f0f0f0,#e5e5e5); border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:28px; }
+    .cd-item-body { flex:1; min-width:0; }
+    .cd-item-brand { font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#999; margin-bottom:3px; }
+    .cd-item-name { font-size:14px; font-weight:600; color:#1a1a1a; margin-bottom:4px; line-height:1.4; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .cd-item-price { font-size:14px; font-weight:700; color:#e63946; margin-bottom:10px; }
+    .cd-qty { display:inline-flex; align-items:center; border:1.5px solid #ddd; border-radius:3px; overflow:hidden; }
+    .cd-qty-btn { width:30px; height:30px; background:#f8f8f8; border:none; cursor:pointer; font-size:16px; font-weight:600; color:#333; display:flex; align-items:center; justify-content:center; transition:background 0.2s,color 0.2s; }
+    .cd-qty-btn:hover { background:#1a1a1a; color:#fff; }
+    .cd-qty-val { width:36px; text-align:center; font-size:14px; font-weight:700; border:none; outline:none; background:#fff; color:#1a1a1a; }
+    .cd-item-remove { background:none; border:none; cursor:pointer; color:#bbb; font-size:18px; padding:4px; align-self:flex-start; transition:color 0.2s; flex-shrink:0; }
+    .cd-item-remove:hover { color:#e63946; }
+    .cd-foot { padding:20px 24px; border-top:1px solid #eee; flex-shrink:0; background:#fff; }
+    .cd-summary-row { display:flex; justify-content:space-between; font-size:13.5px; color:#555; padding:5px 0; }
+    .cd-summary-row.total { font-size:15px; font-weight:800; color:#1a1a1a; border-top:1.5px solid #1a1a1a; margin-top:8px; padding-top:14px; }
+    .cd-checkout { display:block; width:100%; margin-top:16px; padding:15px; background:#1a1a1a; color:#fff; border:none; cursor:pointer; font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; text-align:center; transition:background 0.25s,transform 0.2s,box-shadow 0.25s; text-decoration:none; }
+    .cd-checkout:hover { background:#333; transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,0.2); }
+    .cd-continue { display:block; text-align:center; margin-top:12px; font-size:13px; color:#888; text-decoration:underline; text-underline-offset:3px; cursor:pointer; background:none; border:none; width:100%; transition:color 0.2s; }
+    .cd-continue:hover { color:#1a1a1a; }
+    .cart-badge { position:absolute; top:-4px; right:-4px; background:#e63946; color:#fff; border-radius:50%; width:18px; height:18px; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; opacity:0; transform:scale(0); transition:opacity 0.25s,transform 0.25s cubic-bezier(0.34,1.56,0.64,1); }
+    .cart-badge.visible { opacity:1; transform:scale(1); }
+    .cart-icon-wrap { position:relative; }
+    @media (max-width:480px) { .cart-drawer { width:100vw; } }
+  </style>
+</head>
+<body>
+
+<!-- ===== CART OVERLAY ===== -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<!-- ===== CART DRAWER ===== -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cd-head">
+    <i class="bi bi-bag cd-head-icon"></i>
+    <h2>Giỏ Hàng</h2>
+    <button class="cd-close" onclick="closeCart()" title="Đóng">✕</button>
+  </div>
+  <div class="cd-items" id="cdItems"></div>
+  <div id="cdEmpty" class="cd-empty-wrap">
+    <div class="cd-empty-notice">Chưa có sản phẩm nào trong giỏ hàng</div>
+  </div>
+  <div class="cd-foot">
+    <div class="cd-summary-row"><span>Tổng tiền hàng</span><span id="cdSubtotal">0</span></div>
+    <div class="cd-summary-row"><span>Phí vận chuyển</span><span id="cdShip">0</span></div>
+    <div class="cd-summary-row"><span>Giảm giá</span><span>0</span></div>
+    <div class="cd-summary-row total"><span>Tổng đơn hàng</span><span id="cdTotal">0</span></div>
+    <button class="cd-checkout">Thanh Toán</button>
+    <button class="cd-continue" onclick="closeCart()">← Tiếp tục mua sắm</button>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-top"><div class="container">
+    <p>🚀 Freeship đơn từ 299K &nbsp;|&nbsp; Đổi trả miễn phí 60 ngày &nbsp;|&nbsp; Hotline: <strong>1800 2088</strong></p>
+  </div></div>
+  <div class="header-main"><div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg" alt="H-ATTIRE Logo" class="logo-img"/>
+      <span class="logo-text">H-ATTIRE</span>
+    </a>
+    <nav class="navbar"><ul class="nav-list">
+      <li><a href="index.html">Trang Chủ</a></li>
+      <li class="has-dropdown">
+        <a href="sanpham.html">Sản Phẩm ▾</a>
+        <ul class="dropdown">
+          <li><a href="aothun.html">Áo Thun</a></li>
+          <li><a href="aopolo.html">Áo Polo</a></li>
+          <li><a href="quanshorts.html">Quần Shorts</a></li>
+          <li><a href="domacnha.html">Đồ Mặc Nhà</a></li>
+        </ul>
+      </li>
+      <li><a href="tintuc.html">Tin Tức</a></li>
+      <li><a href="dangky.html">Đăng Ký</a></li>
+      <li><a href="hoatdong.html">Hoạt Động</a></li>
+    </ul></nav>
+    <div class="header-actions">
+      <div class="header-search">
+        <form action="sanpham.html" method="get">
+          <input type="text" name="q" class="header-search-input" placeholder="Tìm kiếm..." autocomplete="off"/>
+          <button type="submit" class="header-search-icon" title="Tìm kiếm" aria-label="Tìm kiếm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </form>
+      </div>
+      <a href="dangky.html" class="icon-btn" title="Tài khoản">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <button onclick="openCart()" class="cart-btn" id="cartBtn" title="Giỏ hàng">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span id="cartBadgeLabel">Giỏ hàng</span>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </div></div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero hero-giohang">
+  <h1>Giỏ Hàng</h1>
+  <p>Kiểm tra và hoàn tất đơn hàng của bạn</p>
+  <div class="breadcrumb">
+    <a href="index.html">Trang Chủ</a><span>›</span>
+    <span>Giỏ Hàng</span>
+  </div>
+</section>
+
+<!-- ===== MAIN ===== -->
+<main class="container cart-empty-main">
+  <div class="cart-empty-inner">
+    <div class="cart-empty-icon">🛒</div>
+    <h2 class="cart-empty-title">Giỏ hàng của bạn đang chờ!</h2>
+    <p class="cart-empty-desc">
+      Nhấn vào nút <strong class="text-primary">Giỏ hàng</strong> trên thanh điều hướng để xem và quản lý sản phẩm đã chọn. Panel sẽ trượt ra từ phía phải một cách mượt mà.
+    </p>
+    <div class="cart-empty-actions">
+      <button onclick="openCart()" class="btn btn-primary btn-lg">🛒 Mở Giỏ Hàng</button>
+      <a href="sanpham.html" class="btn btn-outline">Tiếp Tục Mua Sắm →</a>
+    </div>
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer"><div class="container footer-grid">
+  <div class="footer-col">
+    <img src="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg" alt="H-ATTIRE" class="footer-logo"/>
+    <span class="footer-logo-text">H-ATTIRE</span>
+    <p>Thương hiệu thời trang nam Việt Nam với sứ mệnh mang lại phong cách sống tích cực.</p>
+    <div class="footer-social">
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link"><i class="bi bi-facebook"></i> Facebook</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link"><i class="bi bi-instagram"></i> Instagram</a>
+    </div>
+  </div>
+  <div class="footer-col">
+    <h4>Sản Phẩm</h4>
+    <ul>
+      <li><a href="aothun.html">Áo Thun Nam</a></li>
+      <li><a href="aopolo.html">Áo Polo Nam</a></li>
+      <li><a href="quanshorts.html">Quần Shorts</a></li>
+      <li><a href="domacnha.html">Đồ Mặc Nhà</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Hỗ Trợ</h4>
+    <ul>
+      <li><a href="dangky.html">Đăng Ký Thành Viên</a></li>
+      <li><a href="#">Chính Sách Đổi Trả</a></li>
+      <li><a href="hoatdong.html">Tin Hoạt Động</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Liên Hệ</h4>
+    <p>📞 Hotline: 1800 2088</p>
+    <p>📧 Email: hello@h-attire.vn</p>
+    <div class="newsletter">
+      <input type="email" placeholder="Nhập email của bạn"/>
+      <button>Đăng Ký</button>
+    </div>
+  </div>
+</div>
+<div class="footer-bottom"><div class="container"><p>© 2024 H-ATTIRE. Bản quyền thuộc về H-ATTIRE Vietnam.</p></div></div>
+</footer>
+
+<script>
+  const SAMPLE_ITEMS = [
+    { id: 1, name: 'Áo Thun Cotton Basic', brand: 'H-ATTIRE Basic', price: 189000, qty: 2, img: 'anh/aothuntrang.jpg' },
+    { id: 2, name: 'Áo Polo Pique Cao Cấp', brand: 'H-ATTIRE Polo', price: 279000, qty: 1, img: 'anh/aopolo cao cap.jpg' },
+  ];
+  let cartItems = JSON.parse(localStorage.getItem('hattire_cart') || 'null') || SAMPLE_ITEMS;
+  function saveCart() { localStorage.setItem('hattire_cart', JSON.stringify(cartItems)); }
+  function fmt(n) { return n.toLocaleString('vi-VN') + 'đ'; }
+  function renderCart() {
+    const list = document.getElementById('cdItems');
+    const empty = document.getElementById('cdEmpty');
+    const subtotalEl = document.getElementById('cdSubtotal');
+    const shipEl = document.getElementById('cdShip');
+    const totalEl = document.getElementById('cdTotal');
+    const badge = document.getElementById('cartBadge');
+    list.innerHTML = '';
+    if (!cartItems.length) {
+      list.style.display = 'none'; empty.style.display = 'block';
+      subtotalEl.textContent = '0'; shipEl.textContent = '0'; totalEl.textContent = '0';
+      badge.classList.remove('visible'); return;
+    }
+    list.style.display = 'block'; empty.style.display = 'none';
+    let subtotal = 0;
+    cartItems.forEach((item, idx) => {
+      subtotal += item.price * item.qty;
+      const div = document.createElement('div');
+      div.className = 'cd-item';
+      div.style.animationDelay = (idx * 0.06) + 's';
+      div.innerHTML = `
+        <div class="cd-item-img-ph">👕</div>
+        <div class="cd-item-body">
+          <div class="cd-item-brand">${item.brand}</div>
+          <div class="cd-item-name">${item.name}</div>
+          <div class="cd-item-price">${fmt(item.price)}</div>
+          <div class="cd-qty">
+            <button class="cd-qty-btn" onclick="changeQty(${item.id},-1)">−</button>
+            <input class="cd-qty-val" type="text" value="${item.qty}" readonly/>
+            <button class="cd-qty-btn" onclick="changeQty(${item.id},1)">+</button>
+          </div>
+        </div>
+        <button class="cd-item-remove" onclick="removeItem(${item.id})" title="Xóa">✕</button>
+      `;
+      list.appendChild(div);
+    });
+    const ship = subtotal >= 299000 ? 0 : 30000;
+    const total = subtotal + ship;
+    subtotalEl.textContent = fmt(subtotal);
+    shipEl.textContent = ship === 0 ? 'Miễn phí' : fmt(ship);
+    totalEl.textContent = fmt(total);
+    const totalQty = cartItems.reduce((s, i) => s + i.qty, 0);
+    badge.textContent = totalQty;
+    if (totalQty > 0) badge.classList.add('visible');
+    else badge.classList.remove('visible');
+  }
+  function changeQty(id, delta) {
+    const item = cartItems.find(i => i.id === id);
+    if (!item) return;
+    item.qty = Math.max(1, item.qty + delta);
+    saveCart(); renderCart();
+  }
+  function removeItem(id) {
+    const el = document.querySelector(`[onclick="removeItem(${id})"]`);
+    if (el) {
+      const row = el.closest('.cd-item');
+      row.style.transition = 'opacity 0.25s, transform 0.25s';
+      row.style.opacity = '0'; row.style.transform = 'translateX(30px)';
+      setTimeout(() => { cartItems = cartItems.filter(i => i.id !== id); saveCart(); renderCart(); }, 260);
+    }
+  }
+  function openCart() {
+    document.getElementById('cartDrawer').classList.add('open');
+    document.getElementById('cartOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden'; renderCart();
+  }
+  function closeCart() {
+    document.getElementById('cartDrawer').classList.remove('open');
+    document.getElementById('cartOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCart(); });
+  renderCart();
+  if (window.location.hash === '#open') openCart();
+</script>
+
+</body>
+</html>

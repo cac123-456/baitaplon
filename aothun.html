@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Áo Thun Nam - H-ATTIRE</title>
+  <link rel="icon" type="image/jpeg" href="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    .filter-radio { display:none !important; }
+    #at-fp-low:checked  ~ .products-layout .product-card:not(.p-low)  { display:none; }
+    #at-fp-mid:checked  ~ .products-layout .product-card:not(.p-mid)  { display:none; }
+    #at-fp-high:checked ~ .products-layout .product-card:not(.p-high) { display:none; }
+    #at-fs-basic:checked   ~ .products-layout .product-card:not(.s-basic)   { display:none; }
+    #at-fs-graphic:checked ~ .products-layout .product-card:not(.s-graphic) { display:none; }
+    #at-fs-oversize:checked ~ .products-layout .product-card:not(.s-oversize) { display:none; }
+    #at-fs-sport:checked   ~ .products-layout .product-card:not(.s-sport)   { display:none; }
+    .sidebar-filter-lbl { cursor:pointer; color:var(--text-light,#666); transition:color .2s; display:block; padding:4px 0; }
+    .sidebar-filter-lbl:hover { color:var(--primary,#e63946); }
+    #at-fp-low:checked ~ .products-layout label[for="at-fp-low"],
+    #at-fp-mid:checked ~ .products-layout label[for="at-fp-mid"],
+    #at-fp-high:checked ~ .products-layout label[for="at-fp-high"],
+    #at-fp-all:checked ~ .products-layout label[for="at-fp-all"],
+    #at-fs-basic:checked ~ .products-layout label[for="at-fs-basic"],
+    #at-fs-graphic:checked ~ .products-layout label[for="at-fs-graphic"],
+    #at-fs-oversize:checked ~ .products-layout label[for="at-fs-oversize"],
+    #at-fs-sport:checked ~ .products-layout label[for="at-fs-sport"],
+    #at-fs-all:checked ~ .products-layout label[for="at-fs-all"] { color:var(--primary,#e63946); font-weight:700; }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-top"><div class="container">
+    <p>🚀 Freeship đơn từ 299K &nbsp;|&nbsp; Đổi trả miễn phí 60 ngày &nbsp;|&nbsp; Hotline: <strong>1800 2088</strong></p>
+  </div></div>
+  <div class="header-main"><div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg" alt="H-ATTIRE Logo" class="logo-img"/>
+      <span class="logo-text">H-ATTIRE</span>
+    </a>
+    <nav class="navbar"><ul class="nav-list">
+      <li><a href="index.html">Trang Chủ</a></li>
+      <li class="has-dropdown">
+        <a href="sanpham.html" class="active">Áo Thun ▾</a>
+        <ul class="dropdown">
+          <li><a href="aothun.html" class="active">Áo Thun</a></li>
+          <li><a href="aopolo.html">Áo Polo</a></li>
+          <li><a href="quanshorts.html">Quần Shorts</a></li>
+          <li><a href="domacnha.html">Đồ Mặc Nhà</a></li>
+        </ul>
+      </li>
+      <li><a href="tintuc.html">Tin Tức</a></li>
+      <li><a href="dangky.html">Đăng Ký</a></li>
+      <li><a href="hoatdong.html">Hoạt Động</a></li>
+    </ul></nav>
+    <div class="header-actions">
+      <div class="header-search">
+        <input id="header-search-input" type="text" class="header-search-input" placeholder="Tìm kiếm..." autocomplete="off"/>
+        <button class="header-search-icon" title="Tìm kiếm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      </div>
+      <a href="dangky.html" class="icon-btn" title="Tài khoản">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="giohang.html" class="icon-btn cart-btn" title="Giỏ hàng">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+    </div>
+  </div></div>
+</header>
+
+<section class="page-hero hero-aothun">
+  <h1>Áo Thun Nam</h1>
+  <p>Chất cotton mềm, thoáng mát – phong cách mọi ngày</p>
+  <div class="breadcrumb">
+    <a href="index.html">Trang Chủ</a><span>›</span>
+    <a href="sanpham.html">Sản Phẩm</a><span>›</span>
+    <span>Áo Thun</span>
+  </div>
+</section>
+
+<div class="filter-bar"><div class="container filter-inner">
+  <span class="filter-label">Lọc:</span>
+  <div class="filter-tags">
+    <a href="sanpham.html" class="filter-tag">Ưu Điểm</a>
+    <a href="aothun.html" class="filter-tag active">Áo Thun</a>
+    <a href="aopolo.html" class="filter-tag">Áo Polo</a>
+    <a href="quanshorts.html" class="filter-tag">Quần Shorts</a>
+    <a href="domacnha.html" class="filter-tag">Đồ Mặc Nhà</a>
+  </div>
+  <select class="sort-select" title="Sắp xếp sản phẩm" aria-label="Sắp xếp sản phẩm">
+    <option>Mới nhất</option><option>Giá tăng dần</option>
+    <option>Giá giảm dần</option><option>Bán chạy nhất</option>
+  </select>
+</div></div>
+
+<main class="container">
+  <input type="radio" name="at-price" id="at-fp-all" class="filter-radio" checked/>
+  <input type="radio" name="at-price" id="at-fp-low" class="filter-radio"/>
+  <input type="radio" name="at-price" id="at-fp-mid" class="filter-radio"/>
+  <input type="radio" name="at-price" id="at-fp-high" class="filter-radio"/>
+  <input type="radio" name="at-style" id="at-fs-all" class="filter-radio" checked/>
+  <input type="radio" name="at-style" id="at-fs-basic" class="filter-radio"/>
+  <input type="radio" name="at-style" id="at-fs-graphic" class="filter-radio"/>
+  <input type="radio" name="at-style" id="at-fs-oversize" class="filter-radio"/>
+  <input type="radio" name="at-style" id="at-fs-sport" class="filter-radio"/>
+  <div class="products-layout">
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <h3>Danh Mục</h3>
+        <ul class="sidebar-list">
+          <li><a href="aothun.html" class="sidebar-link-active">Áo Thun Nam</a></li>
+          <li><a href="aopolo.html">Áo Polo Nam</a></li>
+          <li><a href="quanshorts.html">Quần Shorts</a></li>
+          <li><a href="domacnha.html">Đồ Mặc Nhà</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-box">
+        <h3>Phong Cách</h3>
+        <ul class="sidebar-list">
+          <li><label for="at-fs-basic" class="sidebar-filter-lbl">Basic / Trơn màu</label></li>
+          <li><label for="at-fs-graphic" class="sidebar-filter-lbl">Graphic / In hình</label></li>
+          <li><label for="at-fs-oversize" class="sidebar-filter-lbl">Oversize</label></li>
+          <li><label for="at-fs-sport" class="sidebar-filter-lbl">Thể thao</label></li>
+        </ul>
+      </div>
+      <div class="sidebar-box">
+        <h3>Lọc Giá</h3>
+        <ul class="sidebar-list">
+          <li><label for="at-fp-low" class="sidebar-filter-lbl">Dưới 200.000đ</label></li>
+          <li><label for="at-fp-mid" class="sidebar-filter-lbl">200.000 – 350.000đ</label></li>
+          <li><label for="at-fp-high" class="sidebar-filter-lbl">Trên 350.000đ</label></li>
+        </ul>
+      </div>
+      <div class="sidebar-box">
+        <h3>Kích Cỡ</h3>
+        <div class="tags-grid">
+          <span class="filter-tag filter-tag-sm">XS</span>
+          <span class="filter-tag filter-tag-sm active">S</span>
+          <span class="filter-tag filter-tag-sm">M</span>
+          <span class="filter-tag filter-tag-sm">L</span>
+          <span class="filter-tag filter-tag-sm">XL</span>
+          <span class="filter-tag filter-tag-sm">XXL</span>
+        </div>
+      </div>
+    </aside>
+
+    <div>
+      <div class="section-header">
+        <h2>Áo Thun Nam (6 sản phẩm)</h2>
+        <span class="results-count">Hiển thị 1–6 / 6</span>
+      </div>
+      <div class="products-grid-3">
+        <div class="product-card p-low s-basic">
+          <div class="product-img-wrap">
+            <img src="anh/78fea3821d15bfe36f78344c6ec11c26.jpg" alt="Áo Thun Basic Trắng" class="product-img"/>
+            <span class="badge">Mới</span>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+          </div>
+          <div class="product-info">
+            <p class="product-brand">H-ATTIRE Basic</p>
+            <h4 class="product-name">Áo Thun Cotton Basic Trắng</h4>
+            <div class="product-price"><span class="price-new">189.000đ</span><span class="price-old">250.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card p-mid s-graphic">
+          <div class="product-img-wrap">
+            <img src="anh/ao thun doc quen.jpg" alt="Áo Thun Graphic" class="product-img"/>
+            <span class="badge badge-sale">-15%</span>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+          </div>
+          <div class="product-info">
+            <p class="product-brand">H-ATTIRE Art</p>
+            <h4 class="product-name">Áo Thun Graphic Độc Quyền</h4>
+            <div class="product-price"><span class="price-new">255.000đ</span><span class="price-old">299.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card p-mid s-oversize">
+          <div class="product-img-wrap">
+            <img src="anh/áo from rộng.jpg" alt="Áo Thun Oversize" class="product-img"/>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+          </div>
+          <div class="product-info">
+            <p class="product-brand">H-ATTIRE Trend</p>
+            <h4 class="product-name">Áo Thun Oversize Form Rộng</h4>
+            <div class="product-price"><span class="price-new">219.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card p-mid s-sport">
+          <div class="product-img-wrap">
+            <img src="anh/co di.jpg" alt="Áo Thun Sport" class="product-img"/>
+            <span class="badge">Bán Chạy</span>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+          </div>
+          <div class="product-info">
+            <p class="product-brand">H-ATTIRE Sport</p>
+            <h4 class="product-name">Áo Thun Thể Thao CoolDry</h4>
+            <div class="product-price"><span class="price-new">209.000đ</span><span class="price-old">269.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card p-low s-graphic">
+          <div class="product-img-wrap">
+            <img src="anh/ke soc ngang.jpg" alt="Áo Thun Kẻ Sọc" class="product-img"/>
+            <span class="badge badge-sale">-20%</span>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+          </div>
+          <div class="product-info">
+            <p class="product-brand">H-ATTIRE Style</p>
+            <h4 class="product-name">Áo Thun Kẻ Sọc Ngang</h4>
+            <div class="product-price"><span class="price-new">175.000đ</span><span class="price-old">219.000đ</span></div>
+          </div>
+        </div>
+        <div class="product-card p-high s-basic">
+          <div class="product-img-wrap">
+            <img src="anh/3 ao.jpg" alt="Combo 3 áo thun" class="product-img"/>
+            <span class="badge badge-accent">Combo</span>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+          </div>
+          <div class="product-info">
+            <p class="product-brand">H-ATTIRE Combo</p>
+            <h4 class="product-name">Combo 3 Áo Thun Basic</h4>
+            <div class="product-price"><span class="price-new">499.000đ</span><span class="price-old">699.000đ</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <a href="#" class="page-link page-link-active">1</a>
+        <a href="#" class="page-link">2</a>
+        <a href="#" class="page-link">→</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="container footer-grid">
+  <div class="footer-col">
+    <img src="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg" alt="H-ATTIRE" class="footer-logo"/>
+    <span class="footer-logo-text">H-ATTIRE</span>
+    <p>Thương hiệu thời trang nam Việt Nam với sứ mệnh mang lại phong cách sống tích cực.</p>
+    <div class="footer-social">
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link"><i class="bi bi-facebook"></i> Facebook</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link"><i class="bi bi-instagram"></i> Instagram</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link"><i class="bi bi-youtube"></i> YouTube</a>
+    </div>
+  </div>
+  <div class="footer-col">
+    <h4>Sản Phẩm</h4>
+    <ul>
+      <li><a href="aothun.html">Áo Thun Nam</a></li>
+      <li><a href="aopolo.html">Áo Polo Nam</a></li>
+      <li><a href="quanshorts.html">Quần Shorts</a></li>
+      <li><a href="domacnha.html">Đồ Mặc Nhà</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Hỗ Trợ</h4>
+    <ul>
+      <li><a href="dangky.html">Đăng Ký Thành Viên</a></li>
+      <li><a href="#">Chính Sách Đổi Trả</a></li>
+      <li><a href="#">Hướng Dẫn Chọn Size</a></li>
+      <li><a href="hoatdong.html">Tin Hoạt Động</a></li>
+    </ul>
+  </div>
+  <div class="footer-contact">
+    <p class="contact-line"><i class="bi bi-telephone-fill contact-icon contact-phone"></i><span>Hotline: <strong>1800 2088</strong></span></p>
+    <p class="contact-line"><i class="bi bi-envelope-fill contact-icon contact-email"></i><span>Email: hello@H-ATTIRE.me</span></p>
+  </div>
+</div>
+<div class="footer-bottom"><div class="container"><p>© 2024 H-ATTIRE. Bản quyền thuộc về H-ATTIRE Vietnam.</p></div></div>
+</footer>
+
+</body>
+</html>
