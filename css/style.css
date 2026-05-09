@@ -235,80 +235,86 @@ ul { list-style: none; }
 
 /* ===== HERO ===== */
 .hero {
-  background: linear-gradient(135deg, #0f172a 0%, #1d3557 60%, #2a4a7f 100%);
-  min-height: 540px;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  overflow: hidden;
-  position: relative;
+  justify-content: flex-start;
+  padding-left: 80px;
 }
-.hero::before {
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+/* Lớp tối phủ lên ảnh để chữ dễ đọc */
+.hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 70% 50%, rgba(230,57,70,0.15) 0%, transparent 60%);
-}
-.hero .container,
-.hero {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-.hero {
-  padding: 0;
-}
-.hero-content {
-  flex: 1;
-  padding: 60px 40px 60px 80px;
+  background: linear-gradient(to bottom, rgba(10,20,50,0.55) 0%, rgba(10,20,50,0.35) 100%);
   z-index: 1;
+}
+.hero-overlay {
   position: relative;
+  z-index: 2;
+  text-align: left;
+  color: #fff;
+  padding: 20px 0;
+  max-width: 580px;
 }
 .hero-tag {
   display: inline-block;
-  background: rgba(230,57,70,0.2);
+  background: rgba(230,57,70,0.22);
   color: #ff8896;
-  border: 1px solid rgba(230,57,70,0.4);
+  border: 1px solid rgba(230,57,70,0.45);
   border-radius: 50px;
-  padding: 6px 18px;
-  font-size: 13px;
-  font-weight: 600;
+  padding: 5px 18px;
+  font-size: 12px;
+  font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
-.hero h1 {
+.hero-overlay h1 {
   font-family: var(--font-heading);
-  font-size: 58px;
+  font-size: 54px;
   font-weight: 900;
   color: #fff;
-  line-height: 1.1;
-  margin-bottom: 20px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
-.hero h1 .highlight { color: var(--primary); }
-.hero p {
-  color: rgba(255,255,255,0.75);
-  font-size: 17px;
-  margin-bottom: 36px;
-  max-width: 460px;
+.hero-overlay h1 .highlight { color: #ff8896; }
+.hero-overlay p {
+  color: rgba(255,255,255,0.85);
+  font-size: 16px;
+  line-height: 1.65;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.3);
 }
-.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-.hero-image {
-  flex: 0 0 50%;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 540px;
-  /* overflow: hidden BỎ đi để ảnh không bị cắt xén khi chèn vào */
-  background: rgba(255,255,255,0.04);
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: flex-start; }
+.btn-outline-white {
+  display: inline-block;
+  padding: 12px 28px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.7);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: var(--transition);
 }
-.hero-img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  /* object-fit: contain để ảnh hiển thị toàn bộ, không bị cắt */
-  /* Khi ảnh đẹp vừa khung thì đổi lại thành object-fit: cover */
-  object-position: center;
+.btn-outline-white:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: #fff;
+  transform: translateY(-2px);
 }
 
 /* ===== CATEGORY BAR ===== */
@@ -1876,4 +1882,76 @@ ul { list-style: none; }
 .no-result-msg      { text-align: center; padding: 40px 0; color: var(--text-light); font-size: 16px; display: none; }
 .btn-news-more      { margin-top: 16px; display: inline-block; }
 
-
+/* ===== HERO FULL BACKGROUND BANNER ===== */
+.hero {
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  /* Nếu style.css nằm trong thư mục css/ thì dùng ../anh/ */
+  background-image: url("../anh/anhbanner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Lớp phủ tối để chữ đọc rõ hơn trên ảnh */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.82) 0%,
+    rgba(15, 23, 42, 0.58) 42%,
+    rgba(15, 23, 42, 0.18) 100%
+  );
+  z-index: 0;
+}
+
+/* Cho chữ nằm phía trên ảnh */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+  padding: 80px 40px 80px 90px;
+}
+
+/* Ẩn khối ảnh bên phải vì ảnh đã làm background */
+.hero-image {
+  display: none;
+}
+
+/* Chỉnh chữ nổi bật hơn trên ảnh */
+.hero h1 {
+  color: #fff;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.hero p {
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 500;
+}
+
+.hero-tag {
+  background: rgba(230, 57, 70, 0.18);
+  color: #ff9aa6;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.hero .btn-outline {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.hero .btn-outline:hover {
+  background: #fff;
+  color: var(--secondary);
+}
+
+
