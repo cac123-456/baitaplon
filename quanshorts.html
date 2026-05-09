@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quần Shorts Nam - H-ATTIRE</title>
   <link rel="icon" type="image/jpeg" href="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <style>
+    <style>
     .filter-radio { display:none !important; }
     #qs-fp-low:checked  ~ .products-layout .product-card:not(.p-low)  { display:none; }
     #qs-fp-mid:checked  ~ .products-layout .product-card:not(.p-mid)  { display:none; }
@@ -75,6 +76,7 @@
 </header>
 
 <section class="page-hero hero-shorts">
+  <div class="banner-id">524100019</div>
   <h1>Quần Shorts Nam</h1>
   <p>Thoáng mát, tự do vận động – lý tưởng cho mùa hè</p>
   <div class="breadcrumb">
@@ -157,7 +159,7 @@
         <div class="product-card p-mid s-sport">
           <div class="product-img-wrap">
             <img src="anh/f3ffe91784507795d85400958ea5bcee.jpg" alt="Quần Shorts Thể Thao" class="product-img"/>
-            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="#" class="act-btn" data-bs-toggle="offcanvas" data-bs-target="#miniCart">🛒</a></div>
           </div>
           <div class="product-info">
             <p class="product-brand">H-ATTIRE Sport</p>
@@ -169,7 +171,7 @@
           <div class="product-img-wrap">
             <img src="anh/c86ea626ab82d270cc59524762130c87.jpg" alt="Quần Shorts Casual" class="product-img"/>
             <span class="badge">Mới</span>
-            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="#" class="act-btn" data-bs-toggle="offcanvas" data-bs-target="#miniCart">🛒</a></div>
           </div>
           <div class="product-info">
             <p class="product-brand">H-ATTIRE Casual</p>
@@ -181,7 +183,7 @@
           <div class="product-img-wrap">
             <img src="anh/1ffce5edbce8b031192077541383f5fa.jpg" alt="Quần Shorts Bơi" class="product-img"/>
             <span class="badge badge-sale">-15%</span>
-            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="#" class="act-btn" data-bs-toggle="offcanvas" data-bs-target="#miniCart">🛒</a></div>
           </div>
           <div class="product-info">
             <p class="product-brand">H-ATTIRE Beach</p>
@@ -193,7 +195,7 @@
           <div class="product-img-wrap">
             <img src="anh/quan joger.jpg" alt="Quần Jogger" class="product-img"/>
             <span class="badge">Bán Chạy</span>
-            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="#" class="act-btn" data-bs-toggle="offcanvas" data-bs-target="#miniCart">🛒</a></div>
           </div>
           <div class="product-info">
             <p class="product-brand">H-ATTIRE Sport</p>
@@ -205,7 +207,7 @@
           <div class="product-img-wrap">
             <img src="anh/4f8b363ef3685210154e65c016bba433.jpg" alt="Combo Shorts" class="product-img"/>
             <span class="badge badge-accent">Combo</span>
-            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="#" class="act-btn" data-bs-toggle="offcanvas" data-bs-target="#miniCart">🛒</a></div>
           </div>
           <div class="product-info">
             <p class="product-brand">H-ATTIRE Combo</p>
@@ -217,7 +219,7 @@
           <div class="product-img-wrap">
             <img src="anh/5a3ced54ea0b2fb7217bab3476b7782e.jpg" alt="Quần Shorts Premium" class="product-img"/>
             <span class="badge badge-sale">-20%</span>
-            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="#" class="act-btn" data-bs-toggle="offcanvas" data-bs-target="#miniCart">🛒</a></div>
           </div>
           <div class="product-info">
             <p class="product-brand">H-ATTIRE Premium</p>
@@ -272,5 +274,54 @@
 <div class="footer-bottom"><div class="container"><p>© 2024 H-ATTIRE. Bản quyền thuộc về H-ATTIRE Vietnam.</p></div></div>
 </footer>
 
+<!-- ===== MINI CART OFFCANVAS ===== -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="miniCart" aria-labelledby="miniCartLabel">
+  <div class="offcanvas-header mc-header">
+    <h5 class="offcanvas-title" id="miniCartLabel">🛒 Giỏ Hàng Của Bạn</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Đóng"></button>
+  </div>
+  <div class="offcanvas-body mc-body">
+
+    <!-- SẢN PHẨM TRONG GIỎ -->
+    <div class="mc-item">
+      <img src="anh/f3ffe91784507795d85400958ea5bcee.jpg" alt="Quần Shorts Thể Thao" class="mc-img"/>
+      <div class="mc-info">
+        <p class="mc-name">Quần Shorts Thể Thao Ultra Light</p>
+        <p class="mc-brand">H-ATTIRE Sport</p>
+        <div class="mc-row">
+          <span class="mc-price">229.000đ</span>
+          <span class="mc-qty">x1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mc-item">
+      <img src="anh/c86ea626ab82d270cc59524762130c87.jpg" alt="Quần Shorts Casual" class="mc-img"/>
+      <div class="mc-info">
+        <p class="mc-name">Quần Shorts Casual Dạo Phố</p>
+        <p class="mc-brand">H-ATTIRE Casual</p>
+        <div class="mc-row">
+          <span class="mc-price">249.000đ</span>
+          <span class="mc-qty">x1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mc-divider"></div>
+
+    <!-- TỔNG TIỀN -->
+    <div class="mc-total">
+      <span>Tạm tính:</span>
+      <span class="mc-total-price">478.000đ</span>
+    </div>
+
+    <!-- HÀNH ĐỘNG -->
+    <a href="giohang.html" class="mc-btn-checkout">Thanh Toán Ngay →</a>
+    <button type="button" class="mc-btn-continue" data-bs-dismiss="offcanvas">← Tiếp Tục Mua Sắm</button>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

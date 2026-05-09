@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Áo Thun Nam - H-ATTIRE</title>
   <link rel="icon" type="image/jpeg" href="anh/b0e6f4a6-db15-4e68-9e41-545df99f1781.jpeg"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -75,6 +76,7 @@
 </header>
 
 <section class="page-hero hero-aothun">
+  <div class="banner-id">524100019</div>
   <h1>Áo Thun Nam</h1>
   <p>Chất cotton mềm, thoáng mát – phong cách mọi ngày</p>
   <div class="breadcrumb">
@@ -160,7 +162,7 @@
           <div class="product-img-wrap">
             <img src="anh/78fea3821d15bfe36f78344c6ec11c26.jpg" alt="Áo Thun Basic Trắng" class="product-img"/>
             <span class="badge">Mới</span>
-            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="#" class="act-btn" data-bs-toggle="offcanvas" data-bs-target="#miniCart">🛒</a></div>
           </div>
           <div class="product-info">
             <p class="product-brand">H-ATTIRE Basic</p>
@@ -172,7 +174,7 @@
           <div class="product-img-wrap">
             <img src="anh/ao thun doc quen.jpg" alt="Áo Thun Graphic" class="product-img"/>
             <span class="badge badge-sale">-15%</span>
-            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="#" class="act-btn" data-bs-toggle="offcanvas" data-bs-target="#miniCart">🛒</a></div>
           </div>
           <div class="product-info">
             <p class="product-brand">H-ATTIRE Art</p>
@@ -183,7 +185,7 @@
         <div class="product-card p-mid s-oversize">
           <div class="product-img-wrap">
             <img src="anh/áo from rộng.jpg" alt="Áo Thun Oversize" class="product-img"/>
-            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="#" class="act-btn" data-bs-toggle="offcanvas" data-bs-target="#miniCart">🛒</a></div>
           </div>
           <div class="product-info">
             <p class="product-brand">H-ATTIRE Trend</p>
@@ -195,7 +197,7 @@
           <div class="product-img-wrap">
             <img src="anh/co di.jpg" alt="Áo Thun Sport" class="product-img"/>
             <span class="badge">Bán Chạy</span>
-            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="#" class="act-btn" data-bs-toggle="offcanvas" data-bs-target="#miniCart">🛒</a></div>
           </div>
           <div class="product-info">
             <p class="product-brand">H-ATTIRE Sport</p>
@@ -207,7 +209,7 @@
           <div class="product-img-wrap">
             <img src="anh/ke soc ngang.jpg" alt="Áo Thun Kẻ Sọc" class="product-img"/>
             <span class="badge badge-sale">-20%</span>
-            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="#" class="act-btn" data-bs-toggle="offcanvas" data-bs-target="#miniCart">🛒</a></div>
           </div>
           <div class="product-info">
             <p class="product-brand">H-ATTIRE Style</p>
@@ -219,7 +221,7 @@
           <div class="product-img-wrap">
             <img src="anh/3 ao.jpg" alt="Combo 3 áo thun" class="product-img"/>
             <span class="badge badge-accent">Combo</span>
-            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="giohang.html" class="act-btn">🛒</a></div>
+            <div class="product-actions"><a href="#" class="act-btn">🤍</a><a href="#" class="act-btn" data-bs-toggle="offcanvas" data-bs-target="#miniCart">🛒</a></div>
           </div>
           <div class="product-info">
             <p class="product-brand">H-ATTIRE Combo</p>
@@ -274,5 +276,39 @@
 <div class="footer-bottom"><div class="container"><p>© 2024 H-ATTIRE. Bản quyền thuộc về H-ATTIRE Vietnam.</p></div></div>
 </footer>
 
+<!-- ===== MINI CART OFFCANVAS ===== -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="miniCart" aria-labelledby="miniCartLabel">
+  <div class="offcanvas-header mc-header">
+    <h5 class="offcanvas-title" id="miniCartLabel">🛒 Giỏ Hàng Của Bạn</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Đóng"></button>
+  </div>
+  <div class="offcanvas-body mc-body">
+    <div class="mc-item">
+      <img src="anh/78fea3821d15bfe36f78344c6ec11c26.jpg" alt="Áo Thun Cotton Basic" class="mc-img"/>
+      <div class="mc-info">
+        <p class="mc-name">Áo Thun Cotton Basic Trắng</p>
+        <p class="mc-brand">H-ATTIRE Basic</p>
+        <div class="mc-row"><span class="mc-price">189.000đ</span><span class="mc-qty">x1</span></div>
+      </div>
+    </div>
+    <div class="mc-item">
+      <img src="anh/co di.jpg" alt="Áo Thun Sport" class="mc-img"/>
+      <div class="mc-info">
+        <p class="mc-name">Áo Thun Thể Thao CoolDry</p>
+        <p class="mc-brand">H-ATTIRE Sport</p>
+        <div class="mc-row"><span class="mc-price">209.000đ</span><span class="mc-qty">x1</span></div>
+      </div>
+    </div>
+    <div class="mc-divider"></div>
+    <div class="mc-total">
+      <span>Tạm tính:</span>
+      <span class="mc-total-price">398.000đ</span>
+    </div>
+    <a href="giohang.html" class="mc-btn-checkout">Thanh Toán Ngay →</a>
+    <button type="button" class="mc-btn-continue" data-bs-dismiss="offcanvas">← Tiếp Tục Mua Sắm</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

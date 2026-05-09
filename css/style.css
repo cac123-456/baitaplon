@@ -24,6 +24,21 @@
   --font-body: 'Be Vietnam Pro', sans-serif;
 }
 
+/* ===== BANNER ID STYLE ===== */
+.banner-id {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  color: #fff;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 100;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
 /* ===== RESET ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -811,6 +826,12 @@ ul { list-style: none; }
   z-index: 0;
 }
 .page-hero > * { position: relative; z-index: 1; }
+.page-hero > .banner-id {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  align-self: auto;
+}
 /* Ảnh nền riêng cho từng trang */
 .page-hero.hero-aothun   { background-image: url('../anh/fc9c7b4181d894b684e7e201bdb4a9d5.jpg'); }
 .page-hero.hero-aopolo   { background-image: url('../anh/0fb81f4771fe1470f3dac3f607c461df.jpg'); }
@@ -1954,4 +1975,147 @@ ul { list-style: none; }
   color: var(--secondary);
 }
 
+/* ===== MINI CART OFFCANVAS ===== */
+.mc-header {
+  background: var(--secondary);
+  color: #fff;
+  border-bottom: none;
+}
+.mc-header .offcanvas-title { font-family: var(--font-heading); font-size: 18px; font-weight: 700; }
+.mc-header .btn-close { filter: invert(1); }
 
+.mc-body { padding: 20px; display: flex; flex-direction: column; gap: 0; }
+
+.mc-item {
+  display: flex;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.mc-img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: #f0f0f0;
+}
+.mc-info { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.mc-name { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.4; margin: 0; }
+.mc-brand { font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.8px; margin: 0; }
+.mc-row { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
+.mc-price { font-size: 14px; font-weight: 700; color: var(--primary); }
+.mc-qty { font-size: 12px; color: var(--text-light); background: var(--bg-soft); padding: 2px 8px; border-radius: 50px; }
+
+.mc-divider { border: none; border-top: 2px solid var(--border); margin: 16px 0; }
+
+.mc-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.mc-total-price { font-size: 20px; font-weight: 800; color: var(--primary); }
+
+.mc-btn-checkout {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--primary);
+  color: #fff;
+  padding: 13px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: var(--transition);
+  margin-bottom: 10px;
+}
+.mc-btn-checkout:hover { background: var(--primary-dark); transform: translateY(-2px); color: #fff; }
+
+.mc-btn-continue {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  color: var(--text-light);
+  border: 1.5px solid var(--border);
+  padding: 11px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-body);
+}
+.mc-btn-continue:hover { border-color: var(--secondary); color: var(--secondary); }
+
+/* ============================================
+   FILTER RADIO — DÙNG CHUNG CHO CÁC TRANG SẢN PHẨM
+   ============================================ */
+.filter-radio { display: none !important; }
+.sidebar-filter-lbl {
+  cursor: pointer;
+  color: var(--text-light, #666);
+  transition: color .2s;
+  display: block;
+  padding: 4px 0;
+}
+.sidebar-filter-lbl:hover { color: var(--primary, #e63946); }
+
+/* ===== QUẦN SHORTS — quanshorts.html ===== */
+#qs-fp-low:checked  ~ .products-layout .product-card:not(.p-low)  { display: none; }
+#qs-fp-mid:checked  ~ .products-layout .product-card:not(.p-mid)  { display: none; }
+#qs-fp-high:checked ~ .products-layout .product-card:not(.p-high) { display: none; }
+#qs-fs-sport:checked  ~ .products-layout .product-card:not(.s-sport)  { display: none; }
+#qs-fs-casual:checked ~ .products-layout .product-card:not(.s-casual) { display: none; }
+#qs-fs-boi:checked    ~ .products-layout .product-card:not(.s-boi)    { display: none; }
+#qs-fs-jogger:checked ~ .products-layout .product-card:not(.s-jogger) { display: none; }
+#qs-fp-low:checked ~ .products-layout label[for="qs-fp-low"],
+#qs-fp-mid:checked ~ .products-layout label[for="qs-fp-mid"],
+#qs-fp-high:checked ~ .products-layout label[for="qs-fp-high"],
+#qs-fp-all:checked ~ .products-layout label[for="qs-fp-all"],
+#qs-fs-sport:checked ~ .products-layout label[for="qs-fs-sport"],
+#qs-fs-casual:checked ~ .products-layout label[for="qs-fs-casual"],
+#qs-fs-boi:checked ~ .products-layout label[for="qs-fs-boi"],
+#qs-fs-jogger:checked ~ .products-layout label[for="qs-fs-jogger"],
+#qs-fs-all:checked ~ .products-layout label[for="qs-fs-all"] { color: var(--primary, #e63946); font-weight: 700; }
+
+/* ===== ÁO THUN — aothun.html ===== */
+#at-fp-low:checked  ~ .products-layout .product-card:not(.p-low)  { display: none; }
+#at-fp-mid:checked  ~ .products-layout .product-card:not(.p-mid)  { display: none; }
+#at-fp-high:checked ~ .products-layout .product-card:not(.p-high) { display: none; }
+#at-fs-basic:checked   ~ .products-layout .product-card:not(.s-basic)   { display: none; }
+#at-fs-graphic:checked ~ .products-layout .product-card:not(.s-graphic) { display: none; }
+#at-fs-oversize:checked ~ .products-layout .product-card:not(.s-oversize) { display: none; }
+#at-fs-sport:checked   ~ .products-layout .product-card:not(.s-sport)   { display: none; }
+#at-fp-low:checked ~ .products-layout label[for="at-fp-low"],
+#at-fp-mid:checked ~ .products-layout label[for="at-fp-mid"],
+#at-fp-high:checked ~ .products-layout label[for="at-fp-high"],
+#at-fp-all:checked ~ .products-layout label[for="at-fp-all"],
+#at-fs-basic:checked ~ .products-layout label[for="at-fs-basic"],
+#at-fs-graphic:checked ~ .products-layout label[for="at-fs-graphic"],
+#at-fs-oversize:checked ~ .products-layout label[for="at-fs-oversize"],
+#at-fs-sport:checked ~ .products-layout label[for="at-fs-sport"],
+#at-fs-all:checked ~ .products-layout label[for="at-fs-all"] { color: var(--primary, #e63946); font-weight: 700; }
+
+/* ===== ÁO POLO — aopolo.html ===== */
+#fp-mid:checked ~ .products-layout .product-card:not(.p-mid)    { display: none; }
+#fp-high:checked ~ .products-layout .product-card:not(.p-high)  { display: none; }
+#fp-low:checked ~ .products-layout .product-card:not(.p-low)    { display: none; }
+#fs-tron:checked ~ .products-layout .product-card:not(.s-tron)       { display: none; }
+#fs-ke-soc:checked ~ .products-layout .product-card:not(.s-ke-soc)   { display: none; }
+#fs-sport:checked ~ .products-layout .product-card:not(.s-sport)     { display: none; }
+#fs-slim:checked ~ .products-layout .product-card:not(.s-slim)       { display: none; }
+#fp-low:checked ~ .products-layout label[for="fp-low"],
+#fp-mid:checked ~ .products-layout label[for="fp-mid"],
+#fp-high:checked ~ .products-layout label[for="fp-high"],
+#fp-all:checked ~ .products-layout label[for="fp-all"],
+#fs-tron:checked ~ .products-layout label[for="fs-tron"],
+#fs-ke-soc:checked ~ .products-layout label[for="fs-ke-soc"],
+#fs-sport:checked ~ .products-layout label[for="fs-sport"],
+#fs-slim:checked ~ .products-layout label[for="fs-slim"],
+#fs-all:checked ~ .products-layout label[for="fs-all"] { color: var(--primary, #e63946); font-weight: 700; }
